@@ -46,6 +46,8 @@ RUN python -m pip install torchmetrics==0.11.4
 COPY /proxy/nginx.conf /etc/nginx/nginx.conf
 COPY /proxy/readme.html /usr/share/nginx/html/readme.html
 
+ENV PYTHONPATH /deforum/src
+
 RUN chmod +x /start.sh
 
 CMD ["/start.sh"]

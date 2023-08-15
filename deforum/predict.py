@@ -37,7 +37,7 @@ class Predictor(BasePredictor):
         """Load the model into memory to make running multiple predictions efficient"""
         # Load the default model in setup()
         self.default_ckpt = "Protogen_V2.2.ckpt"
-        default_model_ckpt_config_path = "configs/v1-inference.yaml"
+        default_model_ckpt_config_path = "deforum/configs/v1-inference.yaml"
         default_model_ckpt_path = os.path.join(MODEL_CACHE, self.default_ckpt)
         local_config = OmegaConf.load(default_model_ckpt_config_path)
 
@@ -296,7 +296,7 @@ class Predictor(BasePredictor):
                 in ["v2-1_768-ema-pruned.ckpt", "v2-1_512-ema-pruned.ckpt"]
                 else "v1-inference.yaml"
             )
-            ckpt_config_path = f"configs/{model_config}"
+            ckpt_config_path = f"deforum/configs/{model_config}"
             ckpt_path = os.path.join(MODEL_CACHE, model_checkpoint)
             local_config = OmegaConf.load(ckpt_config_path)
 
